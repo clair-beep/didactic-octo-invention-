@@ -1,7 +1,7 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { SongsModule } from './songs/songs.module';
+import { LyricsModule } from './lyrics/lyrics.module';
 import { ConfigModule } from '@nestjs/config';
 import appConfig from './config/app.config';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
@@ -18,7 +18,7 @@ import geniusConfig from './config/genius.config';
     ],
     envFilePath: ['.env'],
   }),
-    SongsModule,
+    LyricsModule,
     GeniusModule],
   controllers: [AppController, GeniusController],
   providers: [AppService],
